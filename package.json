@@ -1,0 +1,21 @@
+{
+  "name": "proxio",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zigomir/proxio.git"
+  },
+  "author": "zigomir",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~3.4.8",
+    "request": "~2.33.0",
+    "passport": "~0.2.0",
+    "passport-facebook": "~1.0.3",
+    "passport-google-oauth": "~0.1.5",
+    "http-proxy": "~1.0.2",
+    "connect-restreamer": "~1.0.0",
+    "winston": "~0.7.3"
+  }
+}
