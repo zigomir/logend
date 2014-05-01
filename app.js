@@ -11,8 +11,6 @@ var proxyHost = process.env.API_HOST,
 // serve static
 app.configure(function() {
   app.use(express.compress());
-  app.use(express.static('public'));
-
   app.use(express.cookieParser());
   app.use(express.json());
   app.use(express.urlencoded());
@@ -66,6 +64,10 @@ var server = app.listen(port, function() {
     server.close();
   }
 
+  if (!process.env.CLIENT_HOST) {
+    console.log('Stopping. You are missing CLIENT_HOST variable!');
+    server.close();
+  }
   if (!process.env.API_SECRET) {
     console.log('Stopping. You are missing API_SECRET variable!');
     server.close();
@@ -94,8 +96,4 @@ var server = app.listen(port, function() {
 
 app.all(proxyPath + '/*', function(req, res) {
   apiProxy.web(req, res, { target: proxyHost });
-});
-
-app.get('/*', function(req, res) {
-  res.sendfile('index.html', {root: './public'});
 });

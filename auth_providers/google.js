@@ -1,14 +1,15 @@
 var passport       = require('passport'),
     loginToApi     = require('./login_to_api'),
-    GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+    GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
+    clientHost     = process.env.CLIENT_HOST;
 
 module.exports = function(app, apiPath, host) {
   app.get('/auth/google', passport.authenticate('google',
     { scope: 'https://www.google.com/m8/feeds https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'}
   ));
   app.get('/auth/google/callback', passport.authenticate('google', {
-      successRedirect: '/',
-      failureRedirect: '/'
+      successRedirect: clientHost,
+      failureRedirect: clientHost
     }
   ));
 

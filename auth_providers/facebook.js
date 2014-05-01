@@ -1,12 +1,13 @@
 var passport         = require('passport'),
     loginToApi       = require('./login_to_api'),
-    FacebookStrategy = require('passport-facebook').Strategy;
+    FacebookStrategy = require('passport-facebook').Strategy,
+    clientHost       = process.env.CLIENT_HOST;
 
 module.exports = function(app, apiPath, host) {
   app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['basic_info', 'email'] }));
   app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-      successRedirect: '/',
-      failureRedirect: '/'
+      successRedirect: clientHost,
+      failureRedirect: clientHost
     }
   ));
 
