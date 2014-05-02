@@ -1,16 +1,10 @@
-# Proxio
+# Proxio...no more, now only auth service without f*****g.io
 
 ## What the hell is this?
 
-Node proxy server with Facebook and Google OAuth.
-
-Server will proxy all calls to `API_HOST` + `API_PATH` specified.
-
-I made it so I can build backend however I want to.
-
-## Why name it so predictable/stupid?
-
-Trying to spend my imagination on more important things in life.
+Facebook and Google OAuth service. You redirect your browser to `/auth/facebook` or `/auth/google`, service will
+try to log you in (find you) in your API and will redirect you back to your client with user token and user id you
+want to have in client to access REST API.
 
 ## Assumptions
 
@@ -20,9 +14,8 @@ You have your backend authentication at `API_PATH` + `/login` path and need or w
 ## Setup and running
 
 ```bash
-# will use http://localhost:4000 for development environment
-export HOST="http://service.domain.net"
-export REDIRECT_URL="http://localhost:4200"
+export HOST="http://auth.domain.net"         # default: http://localhost:4000
+export REDIRECT_URL="http://localhost:4200"  # you want to be redirected back to your client app
 
 export API_HOST="http://localhost:3000"
 export API_PATH="/api/v1"
