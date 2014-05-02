@@ -11,10 +11,8 @@ var proxyHost = process.env.API_HOST,
 // serve static
 app.configure(function() {
   app.use(express.compress());
-  app.use(express.cookieParser());
   app.use(express.json());
   app.use(express.urlencoded());
-  app.use(express.session({ secret: process.env.SESSION_SECRET }));
 
   // saving post!
   // https://github.com/nodejitsu/node-http-proxy/issues/180#issuecomment-12244852
@@ -66,10 +64,6 @@ var server = app.listen(port, function() {
 
   if (!process.env.REDIRECT_URL) {
     console.log('Stopping. You are missing REDIRECT_URL variable!');
-    server.close();
-  }
-  if (!process.env.API_SECRET) {
-    console.log('Stopping. You are missing API_SECRET variable!');
     server.close();
   }
   if (!process.env.FACEBOOK_APP_ID) {

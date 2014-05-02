@@ -34,8 +34,6 @@ export FACEBOOK_APP_SECRET="<FACEBOOK_APP_SECRET>"
 export GOOGLE_APP_ID="<GOOGLE_APP_ID>"
 export GOOGLE_APP_SECRET="<GOOGLE_APP_SECRET>"
 
-export SESSION_SECRET="cookie-secret"
-
 node app
 ```
 
