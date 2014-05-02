@@ -73,10 +73,6 @@ var server = app.listen(port, function() {
     console.log('Stopping. You are missing GOOGLE_APP_SECRET variable!');
     server.close();
   }
-  if (!process.env.SESSION_SECRET) {
-    console.log('Stopping. You are missing SESSION_SECRET variable!');
-    server.close();
-  }
 });
 
 app.all(proxyPath + '/*', function(req, res) {
