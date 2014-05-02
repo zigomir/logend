@@ -64,8 +64,8 @@ var server = app.listen(port, function() {
     server.close();
   }
 
-  if (!process.env.CLIENT_HOST) {
-    console.log('Stopping. You are missing CLIENT_HOST variable!');
+  if (!process.env.REDIRECT_URL) {
+    console.log('Stopping. You are missing REDIRECT_URL variable!');
     server.close();
   }
   if (!process.env.API_SECRET) {

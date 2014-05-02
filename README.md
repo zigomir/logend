@@ -22,7 +22,7 @@ You have your backend authentication at `API_PATH` + `/login` path and need or w
 ```bash
 # will use http://localhost:4000 for development environment
 export HOST="http://service.domain.net"
-export CLIENT_HOST="http://localhost:4200"
+export REDIRECT_URL="http://localhost:4200"
 
 export API_HOST="http://localhost:3000"
 export API_PATH="/api/v1"

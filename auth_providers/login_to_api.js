@@ -1,5 +1,5 @@
-var request = require('request');
-var winston = require('winston');
+var request = require('request'),
+    winston = require('winston');
 
 winston.add(winston.transports.File, { filename: 'login_to_api.log' });
 
@@ -13,8 +13,8 @@ module.exports = function(accessToken, refreshToken, profile, done, apiPath, pro
         json: true,
         headers: { 'api-secret': process.env.API_SECRET },
         form: { email: email, name: name, provider: provider }},
-      function (e, r, body) {
-        if (e) {
+      function (err, res, body) {
+        if (err) {
           winston.error('POST to API /login went wrong!', { errorMessage: e });
         }
 
