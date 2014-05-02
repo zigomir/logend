@@ -35,15 +35,6 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
-app.get('/token', function(req, res) {
-    res.json(req.user || {});
-});
-
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
 var env  = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var port = 4000;
 var host = process.env.HOST || 'http://localhost:' + port;
