@@ -31,13 +31,10 @@ var server = app.listen(port, function() {
   console.log('HTTP server started on http://localhost:' + port + ' in ' + env + ' environment');
   console.log('Press Ctrl+C to stop');
 
-  if (process.env.API_HOST && process.env.API_PATH) {
-    console.log('Will proxy all requests on path ' + process.env.API_PATH + ' to ' + process.env.API_HOST + process.env.API_PATH);
-  } else {
+  if (!process.env.API_HOST || !process.env.API_PATH) {
     console.log('Stopping. You are missing API_HOST or API_PATH variable!');
     server.close();
   }
-
   if (!process.env.REDIRECT_URL) {
     console.log('Stopping. You are missing REDIRECT_URL variable!');
     server.close();
