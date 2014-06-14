@@ -1,6 +1,6 @@
-# Proxio...no more, now only auth service without f*****g.io
+# Logend - backend, frontend, logend
 
-## What the hell is this?
+## What is this?
 
 Facebook and Google OAuth service. You redirect your browser to `/auth/facebook` or `/auth/google`, service will
 try to log you in (find you) in your API and will redirect you back to your client with user token and user id you
@@ -47,3 +47,7 @@ Another terminal
 ```sh
 node-inspector
 ```
+
+## Good OAuth2 resource
+
+[OAuth 2 Simplified](http://aaronparecki.com/articles/2012/07/29/1/oauth2-simplified)
