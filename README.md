@@ -18,7 +18,7 @@ export HOST="http://auth.domain.net"         # default: http://localhost:4000
 export REDIRECT_URL="http://localhost:4200"  # you want to be redirected back to your client app
 
 export API_HOST="http://localhost:3000"
-export API_PATH="/api/v1"
+export API_PATH="/api"
 export API_SECRET="<API_SECRET>"
 
 export FACEBOOK_APP_ID="<FACEBOOK_APP_ID>"
