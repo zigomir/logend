@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rsync -r -v -i app.js package.json auth_providers public deploy@tripsy.me:auth
-ssh deploy@tripsy.me touch auth/public/restart.txt
+rsync -r -v -i app.js package.json auth_providers public deploy@jetlaggin.com:auth
+ssh deploy@jetlaggin.com touch auth/public/restart.txt

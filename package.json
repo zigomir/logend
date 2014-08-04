@@ -1,10 +1,10 @@
 {
-  "name": "proxio",
+  "name": "logend",
   "version": "0.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/zigomir/proxio.git"
+    "url": "git://github.com/zigomir/logend.git"
   },
   "author": "zigomir",
   "license": "MIT",
