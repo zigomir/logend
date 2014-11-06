@@ -5,7 +5,7 @@ var passport       = require('passport'),
 
 module.exports = function(app, apiPath, host) {
   app.get('/auth/google', passport.authenticate('google',
-    { scope: 'https://www.google.com/m8/feeds https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'}
+    { scope: 'https://www.googleapis.com/auth/userinfo.email'}
   ));
   app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: redirectUrl }),
     function(req, res) {
