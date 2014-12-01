@@ -2,9 +2,14 @@
 
 ## What is this?
 
-Facebook and Google OAuth service. You redirect your browser to `/auth/facebook` or `/auth/google`, service will
-try to log you in (find you) in your API and will redirect you back to your client with user token and user id you
-want to have in client to access REST API.
+Facebook and Google OAuth service. You redirect your browser to `/auth/facebook`
+or `/auth/google`, service will try to log you in (find you) in your API and
+will redirect you back to your client with user token and user id you want to
+have in client to access REST API.
+
+## Similar project
+
+[Guardian](https://github.com/Mashape/guardian)
 
 ## Assumptions
 
